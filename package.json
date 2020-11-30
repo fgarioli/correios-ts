@@ -1,0 +1,29 @@
+{
+  "name": "correios-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config=jest.config.json",
+    "prepublish": "npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.9",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2",
+    "@types/jsdom": "^16.2.5"
+  },
+  "dependencies": {
+    "@types/xml2js": "^0.4.7",
+    "axios": "^0.21.0",
+    "jsdom": "^16.4.0",
+    "xml2js": "^0.4.23"
+  }
+}
