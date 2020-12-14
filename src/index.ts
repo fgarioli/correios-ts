@@ -1,3 +1,4 @@
 import CotacaoService from "./services/CotacaoService";
+import RastreioService from "./services/RastreioService";
 
-export default CotacaoService;
+export { CotacaoService, RastreioService };

@@ -1,4 +1,4 @@
-import CotacaoService from "../src/index";
+import { CotacaoService } from "../src/index";
 import Servico from "../src/models/Servico";
 import CorreiosRequest from "../src/models/CorreiosRequest";
 
