@@ -1,11 +1,11 @@
 import FormatoEncomendaEnum from "../enums/FormatoEncomendaEnum";
 import SimNaoEnum from "../enums/SimNaoEnum";
-import Servico from "./Servico";
+import ServicoEnum from "../enums/ServicoEnum";
 
-class CorreiosRequest {
+class CotacaoRequest {
   private nCdEmpresa: string = "";
   private sDsSenha: string = "";
-  private nCdServico: Array<Servico> = [];
+  private nCdServico: Array<ServicoEnum> = [];
   private sCepOrigem: string;
   private sCepDestino: string;
   private nVlPeso: string;
@@ -18,7 +18,7 @@ class CorreiosRequest {
   private nVlValorDeclarado: number = 0;
   private sCdAvisoRecebimento: SimNaoEnum = SimNaoEnum.NAO;
 
-  public addServico(servico: Servico): void {
+  public addServico(servico: ServicoEnum): void {
     this.nCdServico.push(servico);
   }
 
@@ -43,13 +43,13 @@ class CorreiosRequest {
   }
 
   /**
-   * Para clientes sem contrato: utilizar CodigoServicoEnum;
+   * Para clientes sem contrato: utilizar ServicoEnum;
    * Para clientes com contrato: consultar os códigos no seu contrato.
    *
    * Getter $nCdServico
-   * @return {Array<Servico>}
+   * @return {Array<ServicoEnum>}
    */
-  public get $nCdServico(): Array<Servico> {
+  public get $nCdServico(): Array<ServicoEnum> {
     return this.nCdServico;
   }
 
@@ -186,9 +186,9 @@ class CorreiosRequest {
   /**
    *
    * Setter $nCdServico
-   * @param {Array<Servico>} value
+   * @param {Array<ServicoEnum>} value
    */
-  public set $nCdServico(value: Array<Servico>) {
+  public set $nCdServico(value: Array<ServicoEnum>) {
     this.nCdServico = value;
   }
 
@@ -303,4 +303,4 @@ class CorreiosRequest {
   }
 }
 
-export default CorreiosRequest;
+export default CotacaoRequest;

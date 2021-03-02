@@ -1,55 +1,23 @@
-import Servico from "./Servico";
+import ServicoEnum from "../enums/ServicoEnum";
+import SimNaoEnum from "../enums/SimNaoEnum";
 
-class CotacaoResponse {
-  private Codigo: Servico;
+class Cotacao {
+  private Codigo: ServicoEnum;
   private Valor: number;
   private PrazoEntrega: number;
   private ValorMaoPropria: number;
   private ValorAvisoRecebimento: number;
   private ValorValorDeclarado: number;
-  private EntregaDomiciliar: boolean;
-  private EntregaSabado: boolean;
+  private EntregaDomiciliar: SimNaoEnum;
+  private EntregaSabado: SimNaoEnum;
   private ValorSemAdicionais: number;
   private obsFim: string;
 
-  constructor(
-    servico: Servico,
-    response: {
-      Codigo: string;
-      Valor: string;
-      PrazoEntrega: string;
-      ValorMaoPropria: string;
-      ValorAvisoRecebimento: string;
-      ValorValorDeclarado: string;
-      EntregaDomiciliar: string;
-      EntregaSabado: string;
-      Erro: string;
-      MsgErro: string;
-      ValorSemAdicionais: string;
-      obsFim: string;
-    }
-  ) {
-    const formataValor = (valor: string): number => {
-      return parseFloat(valor.replace(".", "").replace(",", "."));
-    };
-
-    this.Codigo = servico;
-    this.Valor = formataValor(response.Valor);
-    this.PrazoEntrega = parseInt(response.PrazoEntrega);
-    this.ValorMaoPropria = formataValor(response.ValorMaoPropria);
-    this.ValorAvisoRecebimento = formataValor(response.ValorAvisoRecebimento);
-    this.ValorValorDeclarado = formataValor(response.ValorValorDeclarado);
-    this.EntregaDomiciliar = response.EntregaDomiciliar === "S" ? true : false;
-    this.EntregaSabado = response.EntregaSabado === "S" ? true : false;
-    this.ValorSemAdicionais = formataValor(response.ValorSemAdicionais);
-    this.obsFim = response.obsFim;
-  }
-
   /**
    * Getter $Codigo
-   * @return {Servico}
+   * @return {ServicoEnum}
    */
-  public get $Codigo(): Servico {
+  public get $Codigo(): ServicoEnum {
     return this.Codigo;
   }
 
@@ -95,17 +63,17 @@ class CotacaoResponse {
 
   /**
    * Getter $EntregaDomiciliar
-   * @return {boolean}
+   * @return {SimNaoEnum}
    */
-  public get $EntregaDomiciliar(): boolean {
+  public get $EntregaDomiciliar(): SimNaoEnum {
     return this.EntregaDomiciliar;
   }
 
   /**
    * Getter $EntregaSabado
-   * @return {boolean}
+   * @return {SimNaoEnum}
    */
-  public get $EntregaSabado(): boolean {
+  public get $EntregaSabado(): SimNaoEnum {
     return this.EntregaSabado;
   }
 
@@ -127,9 +95,9 @@ class CotacaoResponse {
 
   /**
    * Setter $Codigo
-   * @param {Servico} value
+   * @param {ServicoEnum} value
    */
-  public set $Codigo(value: Servico) {
+  public set $Codigo(value: ServicoEnum) {
     this.Codigo = value;
   }
 
@@ -175,17 +143,17 @@ class CotacaoResponse {
 
   /**
    * Setter $EntregaDomiciliar
-   * @param {boolean} value
+   * @param {SimNaoEnum} value
    */
-  public set $EntregaDomiciliar(value: boolean) {
+  public set $EntregaDomiciliar(value: SimNaoEnum) {
     this.EntregaDomiciliar = value;
   }
 
   /**
    * Setter $EntregaSabado
-   * @param {boolean} value
+   * @param {SimNaoEnum} value
    */
-  public set $EntregaSabado(value: boolean) {
+  public set $EntregaSabado(value: SimNaoEnum) {
     this.EntregaSabado = value;
   }
 
@@ -206,4 +174,4 @@ class CotacaoResponse {
   }
 }
 
-export default CotacaoResponse;
+export default Cotacao;

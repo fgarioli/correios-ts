@@ -11,10 +11,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 class RastreioService {
-
-    constructor() {
-
-    }
+    
     public static async rastrear(codigo: string): Promise<Evento[]> {
         const data = await this.getData(codigo);
         return this.formatData(data);

@@ -1,13 +1,13 @@
 import { CotacaoService } from "../src/index";
-import Servico from "../src/models/Servico";
-import CorreiosRequest from "../src/models/CorreiosRequest";
+import ServicoEnum from "../src/enums/ServicoEnum";
+import CotacaoRequest from "../src/models/CotacaoRequest";
 
 test("Simulação Correios", async (done) => {
-  const request = new CorreiosRequest();
+  const request = new CotacaoRequest();
   request.$nCdEmpresa = "08082650";
   request.$sDsSenha = "564321";
-  request.addServico(Servico.PAC());
-  request.addServico(Servico.SEDEX());
+  request.addServico(ServicoEnum.PAC);
+  request.addServico(ServicoEnum.SEDEX);
   request.$sCepOrigem = "70002900";
   request.$sCepDestino = "29304655";
   request.$nVlPeso = "0.5";
