@@ -1,17 +1,23 @@
 {
-  "name": "correios-lib",
+  "name": "correios-ts",
   "version": "1.0.0",
-  "description": "",
+  
+  "description": "Biblioteca para cotação de frete e rastreamento de encomendas para os Correios",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fgarioli/correios-ts.git"
+  },
+  "homepage": "https://github.com/fgarioli/correios-ts.git",
   "scripts": {
     "build": "tsc",
     "test": "jest --config=jest.config.json",
     "prepublish": "npm test"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Fernando Garioli",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.9",
