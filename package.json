@@ -1,6 +1,6 @@
 {
   "name": "correios-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   
   "description": "Biblioteca para cotação de frete e rastreamento de encomendas para os Correios",
   "main": "dist/index.js",
