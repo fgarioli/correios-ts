@@ -1,7 +1,6 @@
 {
   "name": "correios-ts",
   "version": "1.0.1",
-  
   "description": "Biblioteca para cotação de frete e rastreamento de encomendas para os Correios",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +14,12 @@
     "test": "jest --config=jest.config.json",
     "prepublish": "npm test"
   },
-  "keywords": [],
+  "keywords": [
+    "correios",
+    "frete",
+    "rastreamento",
+    "cotação"
+  ],
   "author": "Fernando Garioli",
   "license": "MIT",
   "devDependencies": {
