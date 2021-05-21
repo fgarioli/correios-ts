@@ -20,9 +20,9 @@ $ npm install correios-ts
 ### Simular uma cotação de frete
 
 ```js
-import { CotacaoService } from "../src/index";
-import ServicoEnum from "../src/enums/ServicoEnum";
-import CotacaoRequest from "../src/models/CotacaoRequest";
+import { CotacaoService } from 'correios-ts';
+import ServicoEnum from 'correios-ts/dist/enums/ServicoEnum';
+import CotacaoRequest from 'correios-ts/dist/models/CotacaoRequest';
 
 const request = new CotacaoRequest();
 request.$nCdEmpresa = "08082650";
@@ -44,7 +44,7 @@ const res = await service.realizarCotacao(request);
 ### Rastrear uma encomenda
 
 ```js
-import { RastreioService } from "../src/index";
+import { RastreioService } from 'correios-ts';
 
 const eventos = await RastreioService.rastrear('OL541904724BR');
 ```

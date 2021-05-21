@@ -49,7 +49,7 @@ class CotacaoService {
 
         return axios.get("http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx/CalcPrecoPrazo", {
             params: request,
-            timeout: 3000
+            timeout: 10000
         });
     }
 
